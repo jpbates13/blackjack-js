@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="./assets/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="./classes/card.js"></script>
+
+
+	</head>
+
+	<body>
+
+	<div id="content">
+	</div>
+
+	</body>
+<script>
+			var content = document.getElementById('content');
+			var card = new Card("Nine", "Hearts", 9, true);
+
+			content.innerHTML =  card.image + '<br>' + card.text(); 
+</script>
+
+</html>
