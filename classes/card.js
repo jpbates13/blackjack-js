@@ -16,7 +16,7 @@ function Card(cardRank, cardSuit, cardPointValue, cardFaceDown){
 		return this.rank + " of " + this.suit + " (point value = " + String(this.pointValue) + ")";
 	}
 
-	console.log("Image Source: " + this.image);
-	console.log(this.rank + " of " + this.suit);
+	//console.log("Image Source: " + this.image);
+	//console.log(this.rank + " of " + this.suit);
 
 }

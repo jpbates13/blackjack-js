@@ -1,23 +1,48 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
 		<link rel="stylesheet" href="./assets/style.css">
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script src="./classes/card.js"></script>
+		<script src="./classes/deck.js"></script>
 
 
 	</head>
 
 	<body>
 
-	<div id="content">
-	</div>
+		<div class="container">
+			<h1>Black Jack</h1>
+			<div class="row">
+				<div class="col-sm-6" style="background-color:yellow;">
+					<div id='playerHand'></div>
+				</div>
+				<div class="col-sm-6" style="background-color:pink;">
+					<div id='dealerHand'></div>
+				</div>
+			</div>
+		</div>
 
 	</body>
 <script>
-			var content = document.getElementById('content');
-			var card = new Card("Nine", "Hearts", 9, true);
+	var ranks = ["two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
+				"jack", "queen", "king", "ace"];
+	var suits = ["diamonds", "hearts", "clubs", "spades"];
+	var pointValues = [];
+	for(var i = 0; i < 9 ; i++){
+			pointValues[i] = i+2;
+	}
+	for(var i = 9; i < 12; i++){
+			pointValues[i] = 10;
+	}
+	pointValues[12] = 1;
+	var Deck = new Deck(ranks, suits, pointValues)
 
-			content.innerHTML =  card.image + '<br>' + card.text(); 
+	var Card = Deck.deal();
+
+	document.getElementById('playerHand').innerHTML = Card.image;
 </script>
-
 </html>
